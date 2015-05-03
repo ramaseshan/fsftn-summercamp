@@ -1,0 +1,15 @@
+<li {% if forloop.counter|divisibleby:2 %} class="timeline-inverted"{% else %}odd{% endif %}>
+			      <div class="tl-circ"></div>
+			      <div class="timeline-panel">
+			        <div class="tl-heading">
+			          <h4>{{event.event_name}}</h4>
+			          <p>
+			          	<small class="text-muted"><i class="fa fa-clock-o"></i> {{event.event_start_time}} - {{event.event_end_time}}</small> <br />
+			          	<small class="text-muted"><i class="fa fa-user"></i> {{event.event_speaker|default:"Needs a Speaker"}} {%if event.event_speaker_qual%} - {{event.event_speaker_qual}} {%endif%}</small>
+			          </p>
+			        </div>
+			        <div class="tl-body">
+			          <p>Introduction to Philosophy of Free Software and discussion</p>
+			        </div>
+			      </div>
+			    </li>
