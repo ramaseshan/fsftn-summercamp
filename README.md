@@ -1,7 +1,7 @@
 # fsftn-summercamp
 The timeline app of FSFTN Summercamp 2015
 
-Technologies/Frameworks Used :
+## Technologies/Frameworks Used :
 
 Python 2.7  (python.org)
 
@@ -11,7 +11,7 @@ Jquery 2.2 (jquery.com)
 
 Materialize (materializecss.com)
 
-How to Run locally :
+## How to Run locally :
 1. Install Python Development
 
 	Debian : sudo apt-get install python-dev
