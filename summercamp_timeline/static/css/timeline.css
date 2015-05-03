@@ -55,9 +55,6 @@
   border: 1px solid #d4d4d4;
   padding: 20px;
   position: relative;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
   -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
@@ -114,7 +111,7 @@
 
 
 /** timeline circle icons **/
-.timeline li .tl-circ {
+.timeline li .tl-handson {
   position: absolute;
   top: 23px;
   left: 50%;
@@ -132,7 +129,168 @@
   border-bottom-left-radius: 50%;
   z-index: 99999;
 }
-
+.timeline li .tl-talk {
+  position: absolute;
+  top: 23px;
+  left: 50%;
+  text-align: center;
+  background: #3DFF5F;
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  margin-left: -16px;
+  border: 3px solid #90acc7;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  z-index: 99999;
+}
+.timeline li .tl-ls {
+  position: absolute;
+  top: 23px;
+  left: 50%;
+  text-align: center;
+  background: #E8D516;
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  margin-left: -16px;
+  border: 3px solid #90acc7;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  z-index: 99999;
+}
+.timeline li .tl-tea {
+  position: absolute;
+  top: 23px;
+  left: 50%;
+  text-align: center;
+  background: #FF8125;
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  margin-left: -16px;
+  border: 3px solid #90acc7;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  z-index: 99999;
+}
+.timeline li .tl-lunch {
+  position: absolute;
+  top: 23px;
+  left: 50%;
+  text-align: center;
+  background: #E816B2;
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  margin-left: -16px;
+  border: 3px solid #90acc7;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  z-index: 99999;
+}
+.timeline li .tl-cultural {
+  position: absolute;
+  top: 23px;
+  left: 50%;
+  text-align: center;
+  background: #1924FF;
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  margin-left: -16px;
+  border: 3px solid #90acc7;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  z-index: 99999;
+}
+.timeline li .tl-certificate {
+  position: absolute;
+  top: 23px;
+  left: 50%;
+  text-align: center;
+  background: #E8DB5A;
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  margin-left: -16px;
+  border: 3px solid #90acc7;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  z-index: 99999;
+}
+.timeline li .tl-photo {
+  position: absolute;
+  top: 23px;
+  left: 50%;
+  text-align: center;
+  background: #E1B2E8;
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  margin-left: -16px;
+  border: 3px solid #90acc7;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  z-index: 99999;
+}
+.timeline li .tl-group {
+  position: absolute;
+  top: 23px;
+  left: 50%;
+  text-align: center;
+  background: #43FF7D;
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  margin-left: -16px;
+  border: 3px solid #90acc7;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  z-index: 99999;
+}
+.timeline li .tl-instructions {
+  position: absolute;
+  top: 23px;
+  left: 50%;
+  text-align: center;
+  background: #FFA16F;
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  margin-left: -16px;
+  border: 3px solid #90acc7;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  z-index: 99999;
+}
 
 /** timeline content **/
 

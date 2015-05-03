@@ -1,15 +1,40 @@
 <li {% if forloop.counter|divisibleby:2 %} class="timeline-inverted"{% else %}odd{% endif %}>
-			      <div class="tl-circ"></div>
-			      <div class="timeline-panel">
-			        <div class="tl-heading">
-			          <h4>{{event.event_name}}</h4>
-			          <p>
-			          	<small class="text-muted"><i class="fa fa-clock-o"></i> {{event.event_start_time}} - {{event.event_end_time}}</small> <br />
-			          	<small class="text-muted"><i class="fa fa-user"></i> {{event.event_speaker|default:"Needs a Speaker"}} {%if event.event_speaker_qual%} - {{event.event_speaker_qual}} {%endif%}</small>
-			          </p>
-			        </div>
-			        <div class="tl-body">
-			          <p>Introduction to Philosophy of Free Software and discussion</p>
-			        </div>
-			      </div>
-			    </li>
+  <div class=" tooltipped
+  	{%if event.event_type == 'talk'%}tl-talk
+  	{%elif event.event_type == 'handson'%} tl-handson
+  	{%elif event.event_type == 'tea'%} tl-tea
+  	{%elif event.event_type == 'lunch'%} tl-lunch
+  	{%elif event.event_type == 'ls'%} tl-ls
+  	{%elif event.event_type == 'cultural'%} tl-cultural
+  	{%elif event.event_type == 'certificate'%} tl-certificate
+  	{%elif event.event_type == 'photo'%} tl-photo
+  	{%elif event.event_type == 'group'%} tl-group
+  	{%elif event.event_type == 'instructions'%} tl-instructions
+  	{%else%} tl-talk
+  	{%endif%}" data-position="bottom" data-delay="50" data-tooltip="
+  	{%if event.event_type == 'talk'%}Open Talk
+  	{%elif event.event_type == 'handson'%} Hands-On Session
+  	{%elif event.event_type == 'tea'%} Tea Break
+  	{%elif event.event_type == 'lunch'%} Yummy Lunch
+  	{%elif event.event_type == 'ls'%} Lightning Talk
+  	{%elif event.event_type == 'cultural'%} Cultural Event
+  	{%elif event.event_type == 'certificate'%} Certificate Distribution
+  	{%elif event.event_type == 'photo'%} Group/Individual Photo Event
+  	{%elif event.event_type == 'group'%} Group Formation
+  	{%elif event.event_type == 'instructions'%} Gather for instructions
+  	{%else%} Call the Event Organiser
+  	{%endif%}
+  	"></div>
+  <div class="timeline-panel">
+    <div class="tl-heading">
+      <h4>{{event.event_name}}</h4>
+      <p>
+      	<small class="text-muted"><i class="fa fa-clock-o"></i> {{event.event_start_time}} - {{event.event_end_time}}</small> <br />
+      	<small class="text-muted"><i class="fa fa-user"></i> {{event.event_speaker|default:"Needs a Speaker"}} {%if event.event_speaker_qual%} - {{event.event_speaker_qual}} {%endif%}</small>
+      </p>
+    </div>
+    <div class="tl-body">
+      <p>Introduction to Philosophy of Free Software and discussion</p>
+    </div>
+  </div>
+</li>

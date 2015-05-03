@@ -18,61 +18,85 @@
             </ul>
           </div>
           <div id="day1" class="col s12">
-			<ul class="timeline">
-				{% for event in day1 %}
-					{% include 'timeline.html'%}
-				{% empty%}
-					No Events Yet
-				{% endfor %}			    
-			  </ul>
-          </div>
+      		{% if day1 %}
+				<ul class="timeline">
+					{% for event in day1 %}
+						{% include 'timeline.html'%}
+					{% endfor %}
+		     	</ul>
+			{% else %}
+				No Events Yet			
+			{% endif %}
+	      </div>
           <div id="day2" class="col s12">
-          	<ul class="timeline">
-				{% for event in day2 %}
-					{% include 'timeline.html'%}
-				{% empty%}
-					No Events Yet
-				{% endfor %}			    
-			  </ul>
+      		{% if day2 %}
+				<ul class="timeline">
+					{% for event in day2 %}
+						{% include 'timeline.html'%}
+					{% endfor %}
+		     	</ul>
+			{% else %}
+				No Events Yet			
+			{% endif %}
           </div>
           <div id="day3" class="col s12">
-          	<ul class="timeline">
-				{% for event in day3 %}
-					{% include 'timeline.html'%}
-				{% empty%}
-					No Events Yet
-				{% endfor %}			    
-			  </ul>
+      		{% if day3 %}
+				<ul class="timeline">
+					{% for event in day3 %}
+						{% include 'timeline.html'%}
+					{% endfor %}
+		     	</ul>
+			{% else %}
+				No Events Yet			
+			{% endif %}
+
           </div>
           <div id="day4" class="col s12">
-          	<ul class="timeline">
-				{% for event in day4 %}
-					{% include 'timeline.html'%}
-				{% empty%}
-					No Events Yet
-				{% endfor %}			    
-			  </ul>
+      		{% if day4 %}
+				<ul class="timeline">
+					{% for event in day4 %}
+						{% include 'timeline.html'%}
+					{% endfor %}
+		     	</ul>
+			{% else %}
+				No Events Yet			
+			{% endif %}
+
           </div>
           <div id="day5" class="col s12">
-          	<ul class="timeline">
-				{% for event in day5 %}
-					{% include 'timeline.html'%}
-				{% empty%}
-					No Events Yet
-				{% endfor %}			    
-			  </ul>
+      		{% if day5 %}
+				<ul class="timeline">
+					{% for event in day5 %}
+						{% include 'timeline.html'%}
+					{% endfor %}
+		     	</ul>
+			{% else %}
+				No Events Yet			
+			{% endif %}
+
           </div>
           <div id="day6" class="col s12">
-          	<ul class="timeline">
-				{% for event in day6 %}
-					{% include 'timeline.html'%}
-				{% empty%}
-					No Events Yet
-				{% endfor %}			    
-			  </ul>
+      		{% if day6 %}
+				<ul class="timeline">
+					{% for event in day6 %}
+						{% include 'timeline.html'%}
+					{% endfor %}
+		     	</ul>
+			{% else %}
+				No Events Yet			
+			{% endif %}
+
           </div>
         </div>
     </div>
   </div>
 
+{% endblock %}
+
+{% block extra_js %}
+	<script>
+		$(document).ready(function(){
+			//$(".tl-talk").hover(function(){alert("Talk")})
+		})
+	</script>
 {% endblock %}
