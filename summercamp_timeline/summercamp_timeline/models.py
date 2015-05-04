@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+from django.core.validators import RegexValidator
 
 DAYS_CHOICES = (
     ('day1', 'Day 1'),
@@ -35,3 +37,19 @@ class Event(models.Model):
 
 	def __unicode__(self):
 		return self.event_name
+
+class SpeakerDetails(models.Model):
+	numeric = RegexValidator(r'^[0-9]*$', message='Only numbers are allowed.')
+
+	user = models.OneToOneField(User)
+	mobile_number = models.CharField(unique=True, max_length=20, validators=[numeric],blank=False,null=False)
+	facebook = models.CharField(unique=True,max_length=500)
+	twitter = models.CharField(unique=True,max_length=500)
+	diaspora = models.CharField(unique=True,max_length=500)
+
+	def __unicode__(self):
+		return self.mobile_number
+
+class PendingProposals(models.Model):
+	event_id = models.ForeignKey(Event)
+	user_id = models.ForeignKey(User)

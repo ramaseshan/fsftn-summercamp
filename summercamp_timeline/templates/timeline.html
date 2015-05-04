@@ -35,6 +35,15 @@
     </div>
     <div class="tl-body">
       <p>Introduction to Philosophy of Free Software and discussion</p>
+      {% if not event.event_speaker%}
+      <p class="right-align">
+        <form method="post" action="{% url 'propose' %}">
+            {% csrf_token %}
+            <input type="text" value="{{event.event_id}}" style="display:none" name="event_id"/>
+            <button type="submit" class="btn-floating btn-large waves-effect waves-light red tooltipped " data-position="bottom" data-delay="50" data-tooltip="Propose to Talk"><i class="mdi-content-add"></i></button>
+        </form>
+      </p>
+      {% endif %}
     </div>
   </div>
 </li>

@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from .views import get_events_list
+from .views import get_events_list, propose_to_talk
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', get_events_list, name='home'),
-    url(r'^(?P<day>[-A-Za-z0-9_]+)/$', get_events_list, name='get_events_list')
+    url(r'^propose/$', propose_to_talk, name='propose'),
 ]
