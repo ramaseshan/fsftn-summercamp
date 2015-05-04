@@ -18,7 +18,7 @@ EVENT_TYPE = (
 	('ls','Lightning Talk'),
 	('talk','Talks and Discussions'),
 	('cultural','Cultural Event'),
-	('certificate','Cirtificate Distribution'),
+	('certificate','Certificate Distribution'),
 	('photo','Photo Session'),
 	('group','Group Formation'),
 	('instructions','Instructions'),

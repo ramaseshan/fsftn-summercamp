@@ -9,7 +9,7 @@
         <div class="card-panel teal">
           <span class="white-text">
           		{% if success == "success"%}
-          			 Request sent successfully. Please wait for the administrator to approve.It is mandatory to update your profile, so as to make us connect and contact you better.
+          			 Thankyou for your interest. Can you fill in the below details, so that we can contact you for futher details. Please note that <strong>MOBILE NUMBER IS MANDATORY </strong> Without your mobile number, we cant approve your request.
           		{% else %} 
           			Something fishy just happened. Can you take an effort and send out a request again. But ya, also make sure you fill up your profile.
           		{% endif %}
@@ -49,13 +49,13 @@
             </div>
             <div class="card-action row">
         		<div class="col s12 m6">
-            	  	<a ><i class="fa fa-mobile fa-2x"></i> &nbsp; {% if user_profile.is_mobile_visible %}{{user_profile.mobile_number}}{%else%}Mobile not pubic{%endif%}</a>
+            	  	<a ><i class="fa fa-mobile fa-2x"></i> &nbsp; {% if user_profile.is_mobile_visible %}{{user_profile.mobile_number}}{%else%}Mobile not public{%endif%}</a>
               	</div>
               	<div class="col s12 m6">
               		<div class="right">
-						<a href="{% if user_profile.is_fb_visible %}{{user_profile.facebook}}{%else%}#{%endif%}"><i class="fa fa-facebook fa-2x"></i></a>
-						<a href="{% if user_profile.is_twitter_visible %}{{user_profile.twitter}}{%else%}#{%endif%}"><i class="fa fa-twitter fa-2x"></i></a>
-						<a href="{% if user_profile.is_diasp_visible %}{{user_profile.diaspora}}{%else%}#{%endif%}"><i class="fa fa-refresh fa-2x"></i></a>
+						  {% if user_profile.facebook %}<a href="{% if user_profile.is_fb_visible %}{{user_profile.facebook}}{%else%}#{%endif%}"><i class="fa fa-facebook fa-2x"></i></a> {% endif %}
+						  {% if user_profile.twitter %} <a href="{% if user_profile.is_twitter_visible %}{{user_profile.twitter}}{%else%}#{%endif%}"><i class="fa fa-twitter fa-2x"></i></a> {% endif %}
+						  {% if user_profile.diaspora %} <a href="{% if user_profile.is_diasp_visible %}{{user_profile.diaspora}}{%else%}#{%endif%}"><i class="fa fa-refresh fa-2x"></i></a> {% endif %}
 					</div>
 				</div>
             </div>

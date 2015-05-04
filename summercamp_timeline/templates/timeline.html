@@ -30,19 +30,19 @@
       <h4>{{event.event_name}}</h4>
       <p>
       	<small class="text-muted"><i class="fa fa-clock-o"></i> {{event.event_start_time}} - {{event.event_end_time}}</small> <br />
-        {% if event.event_speaker%}
-      	   <a href="{% url 'user_profile' %}?speaker={{event.event_speaker.id}}">
-              <small class="text-muted"><i class="fa fa-user"></i> {{event.event_speaker|default:"Needs a Speaker"}} {%if event.event_speaker_qual%} - {{event.event_speaker_qual}} {%endif%}</small>
-            </a>
-        {% else %}
-          <small class="text-muted"><i class="fa fa-user"></i> {{event.event_speaker|default:"Needs a Speaker"}} 
+        {% if "Speaker" in event.event_speaker.user.first_name %}
+        <small class="text-muted"><i class="fa fa-user"></i> {{event.event_speaker|default:"Needs a Speaker"}} 
             {%if event.event_speaker_qual%} - {{event.event_speaker_qual}} {%endif%}</small>
-        {% endif %}
+        {% else %}
+           <a href="{% url 'user_profile' %}?speaker={{event.event_speaker.id}}">
+              <small class="text-muted"><i class="fa fa-user"></i> {{event.event_speaker.user|default:"Needs a Speaker"}} {%if event.event_speaker_qual%} - {{event.event_speaker_qual}} {%endif%}</small>
+            </a>
+        {% endif %}          
       </p>
     </div>
     <div class="tl-body">
-      <p>Introduction to Philosophy of Free Software and discussion</p>
-      {% if not event.event_speaker%}
+      <p>{{event.event_desc}}</p>
+      {% if "Speaker" in event.event_speaker.user.first_name %}
       <p class="right-align">
         <form method="post" action="{% url 'propose' %}">
             {% csrf_token %}
