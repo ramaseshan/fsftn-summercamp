@@ -8,12 +8,12 @@ from .models import Event , PendingProposals, SpeakerDetails
 from .forms import SpeakerDetailsForm
 
 def get_events_list(request):
-	day1 = Event.objects.filter(day_of_event='day1')
-	day2 = Event.objects.filter(day_of_event='day2')
-	day3 = Event.objects.filter(day_of_event='day3')
-	day4 = Event.objects.filter(day_of_event='day4')
-	day5 = Event.objects.filter(day_of_event='day5')
-	day6 = Event.objects.filter(day_of_event='day6')
+	day1 = Event.objects.filter(day_of_event='day1').order_by('event_start_time')
+	day2 = Event.objects.filter(day_of_event='day2').order_by('event_start_time')
+	day3 = Event.objects.filter(day_of_event='day3').order_by('event_start_time')
+	day4 = Event.objects.filter(day_of_event='day4').order_by('event_start_time')
+	day5 = Event.objects.filter(day_of_event='day5').order_by('event_start_time')
+	day6 = Event.objects.filter(day_of_event='day6').order_by('event_start_time')
 	return render_to_response('index.html', {'day1':day1,'day2':day2,'day3':day3,'day4':day4,'day5':day5,'day6':day6},context_instance=RequestContext(request))
 
 @login_required

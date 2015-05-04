@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '5zawqf55!my$r7x63c-y)h$x4d=cpadr^d#%2=^$)-67yt8=*s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['seshan.pythonanywhere.com']
 
 
 # Application definition
@@ -114,6 +114,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 ### Allauth settings
 SITE_ID = 1
