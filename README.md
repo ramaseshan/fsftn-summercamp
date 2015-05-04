@@ -43,3 +43,11 @@ Materialize (materializecss.com)
         ./manage.py runserver
 
 	open 127.0.0.1:8000
+
+7. Activate Social Account login
+     	Refer this and setup, facebook login : http://www.sarahhagstrom.com/2013/09/the-missing-django-allauth-tutorial/
+
+
+Colur Choices :
+Primary colour : deep-orange lighten-1
+Secondary Color : Default Materialize Green
