@@ -31,18 +31,18 @@
       <p>
       	<small class="text-muted"><i class="fa fa-clock-o"></i> {{event.event_start_time}} - {{event.event_end_time}}</small> <br />
         {% if "Speaker" in event.event_speaker.user.first_name %}
-        <small class="text-muted"><i class="fa fa-user"></i> {{event.event_speaker|default:"Needs a Speaker"}} 
+        <small class="text-muted"><i class="fa fa-user"></i> {{event.event_speaker|default:"Needs a Volunteer"}} 
             {%if event.event_speaker_qual%} - {{event.event_speaker_qual}} {%endif%}</small>
         {% else %}
            <a href="{% url 'user_profile' %}?speaker={{event.event_speaker.id}}">
-              <small class="text-muted"><i class="fa fa-user"></i> {{event.event_speaker.user|default:"Needs a Speaker"}} {%if event.event_speaker_qual%} - {{event.event_speaker_qual}} {%endif%}</small>
+              <small class="text-muted"><i class="fa fa-user"></i> {{event.event_speaker.user|default:"Needs a Volunteer"}} {%if event.event_speaker_qual%} - {{event.event_speaker_qual}} {%endif%}</small>
             </a>
         {% endif %}          
       </p>
     </div>
     <div class="tl-body">
       <p>{{event.event_desc}}</p>
-      {% if "Speaker" in event.event_speaker.user.first_name %}
+      {% if "Speaker" in event.event_speaker.user.first_name and event.event_type != "lunch" and event.event_type != "tea" %}
       <p class="right-align">
         <form method="post" action="{% url 'propose' %}">
             {% csrf_token %}
