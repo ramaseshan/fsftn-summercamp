@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from .views import get_events_list, propose_to_talk
+from .views import get_events_list, propose_to_talk, profile, userprofile, pending_admin_approvals
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', get_events_list, name='home'),
     url(r'^propose/$', propose_to_talk, name='propose'),
+    url(r'^pending_admin_approvals/$', pending_admin_approvals, name='pending_admin_approvals'),
+    url(r'^profile/$', profile, name='profile'),
+    url(r'^userprofile/$', userprofile, name='user_profile'),
+    url(r'^accounts/', include('allauth.urls')),    
 ]

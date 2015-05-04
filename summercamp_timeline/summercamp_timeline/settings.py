@@ -39,7 +39,12 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'summercamp_timeline',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -55,22 +60,24 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'summercamp_timeline.urls'
 
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'),],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.csrf',
-            ],
-        },
-    },
-]
+# TEMPLATES = [
+#     {
+#         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+#         'DIRS': [os.path.join(BASE_DIR, 'templates'),],
+#         'APP_DIRS': True,
+#         # 'OPTIONS': {
+#         #     'context_processors': [
+#         #         'django.template.context_processors.debug',
+#         #         'django.template.context_processors.request',
+#         #         'django.contrib.auth.context_processors.auth',
+#         #         'django.contrib.messages.context_processors.messages',
+#         #         'django.template.context_processors.csrf',
+#         #         'allauth.account.context_processors.account',
+#         #         'allauth.socialaccount.context_processors.socialaccount',
+#         #     ],
+#         #},
+#     },
+# ]
 
 WSGI_APPLICATION = 'summercamp_timeline.wsgi.application'
 
@@ -106,3 +113,50 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+
+### Allauth settings
+SITE_ID = 1
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
+
+# Manually doing it here because django-allauth has still not started to support the new styled template processors.
+TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
+
+TEMPLATE_CONTEXT_PROCESSORS  = (
+        'django.template.context_processors.debug',
+        'django.template.context_processors.request',
+        'django.contrib.auth.context_processors.auth',
+        'django.contrib.messages.context_processors.messages',
+        'django.template.context_processors.csrf',
+        'allauth.account.context_processors.account',
+        'allauth.socialaccount.context_processors.socialaccount',
+
+)
+
+
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    "django.contrib.auth.backends.ModelBackend",
+    # `allauth` specific authentication methods, such as login by e-mail
+    "allauth.account.auth_backends.AuthenticationBackend"
+)
+ 
+ # auth and allauth settings
+LOGIN_REDIRECT_URL = '/'
+SOCIALACCOUNT_QUERY_EMAIL = True
+SOCIALACCOUNT_PROVIDERS = {
+    'facebook': {
+        'SCOPE': ['email', 'publish_stream'],
+        'METHOD': 'js_sdk'  # instead of 'oauth2'
+    }
+}
+
+ACCOUNT_LOGOUT_ON_GET = True
+
+"""
+Database Queries:
+UPDATE django_site SET DOMAIN = '127.0.0.1:8000', name = 'FSFTN_SummerCamp' WHERE id=1;
+INSERT INTO socialaccount_socialapp (provider, name, secret, client_id, `key`) VALUES ("facebook", "Facebook", "e5cd06ea67abfe2fd73492a657c9d1a7","889616337746446", '');
+INSERT INTO socialaccount_socialapp_sites (socialapp_id, site_id) VALUES (1,1);
+"""

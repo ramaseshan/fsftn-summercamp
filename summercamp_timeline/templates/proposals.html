@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	
+<div class="container">
+	<div class="row">
+		<div class="col s12 m12">
+			<table class="responsive-table striped hoverable">
+		        <thead>
+		          <tr>
+		              <th data-field="id">Event Name</th>
+		              <th data-field="name">Requested User</th>
+		              <th data-field="price">Approve</th>
+		              <th data-field="price">Hold</th>
+		          </tr>
+		        </thead>
+
+		        <tbody>
+		        	{% for proposal in proposals %}
+		          <tr id="row_{{proposal.id}}">
+		            <td>{{proposal.event_id.event_name}}</td>
+		            <td>{{proposal.user_id.first_name}} {{proposal.user_id.last_name}}</td>
+		            <td class="approve" id="{{proposal.id}}"><a class="waves-effect waves-light btn"><i class="mdi-file-cloud right"></i>Approve</a></td>
+		            <td><a class="waves-effect waves-light btn red"><i class="mdi-file-cloud right"></i>Hold</a></td>
+		          </tr>
+					{% endfor %}
+		        </tbody>
+	    	</table>
+	    </div>
+	</div>
+</div>
+      
+<script>
+	$(".approve").click(function(){
+		var id = this.id;
+		$.ajax({
+			'method' : 'POST',
+			'url' : '{% url "pending_admin_approvals" %}',
+			'data' : {
+				'id': id,
+				'csrfmiddlewaretoken': "{{csrf_token}}"
+			},
+			success: function(){$(this.id).hide();},
+			error: function(){alert("Error")},
+		});
+	});
+</script>      
+{% endblock%}

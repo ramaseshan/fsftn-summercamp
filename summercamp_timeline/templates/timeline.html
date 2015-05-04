@@ -30,7 +30,14 @@
       <h4>{{event.event_name}}</h4>
       <p>
       	<small class="text-muted"><i class="fa fa-clock-o"></i> {{event.event_start_time}} - {{event.event_end_time}}</small> <br />
-      	<small class="text-muted"><i class="fa fa-user"></i> {{event.event_speaker|default:"Needs a Speaker"}} {%if event.event_speaker_qual%} - {{event.event_speaker_qual}} {%endif%}</small>
+        {% if event.event_speaker%}
+      	   <a href="{% url 'user_profile' %}?speaker={{event.event_speaker.id}}">
+              <small class="text-muted"><i class="fa fa-user"></i> {{event.event_speaker|default:"Needs a Speaker"}} {%if event.event_speaker_qual%} - {{event.event_speaker_qual}} {%endif%}</small>
+            </a>
+        {% else %}
+          <small class="text-muted"><i class="fa fa-user"></i> {{event.event_speaker|default:"Needs a Speaker"}} 
+            {%if event.event_speaker_qual%} - {{event.event_speaker_qual}} {%endif%}</small>
+        {% endif %}
       </p>
     </div>
     <div class="tl-body">

@@ -6,9 +6,38 @@
 	<link href="/static/Font-Awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 	{%block extra_css%}
 	{%endblock%}
-
 </head>
 <body>
+<nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">FSFTN - SummerCamp</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+      <ul class="right hide-on-med-and-down">
+      	<li><a href="{% url 'home' %}">Home</a></li>
+      	{% if user.is_authenticated %}
+      		{% if user.is_superuser%}
+      			<li><a href="{% url 'pending_admin_approvals' %}">View Pending Proposals</a></li>
+      		{% endif %}
+	        <li><a href="{% url 'profile' %}">Profile</a></li>
+	        <li><a href="{% url 'account_logout'%}">Logout</a></li>
+        {%else%}
+	        <li><a href="{% url 'account_login' %}">Login</a></li>
+	        <li><a href="{% url 'account_signup' %}">SignUp</a></li>
+        {%endif%}
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+      	<li><a href="{% url 'home' %}">Home</a></li>
+      	{% if user.is_authenticated %}
+	        <li><a href="{% url 'profile' %}">Profile</a></li>
+	        <li><a href="{% url 'account_logout'%}">Logout</a></li>
+        {%else%}
+	        <li><a href="{% url 'account_login' %}">Login</a></li>
+	        <li><a href="{% url 'account_signup' %}">SignUp</a></li>
+        {%endif%}
+
+      </ul>
+    </div>
+  </nav>
 	{%block content%}
 		Welcome to FSFTN Event Schedule page
 	{%endblock%}
