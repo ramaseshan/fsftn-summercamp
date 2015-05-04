@@ -22,6 +22,7 @@ EVENT_TYPE = (
 	('photo','Photo Session'),
 	('group','Group Formation'),
 	('instructions','Instructions'),
+	('project','Project Display'),
 )
 
 

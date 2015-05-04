@@ -10,6 +10,7 @@
   	{%elif event.event_type == 'photo'%} tl-photo
   	{%elif event.event_type == 'group'%} tl-group
   	{%elif event.event_type == 'instructions'%} tl-instructions
+    {%elif event.event_type == 'project'%} tl-group
   	{%else%} tl-talk
   	{%endif%}" data-position="bottom" data-delay="50" data-tooltip="
   	{%if event.event_type == 'talk'%}Open Talk
@@ -22,6 +23,7 @@
   	{%elif event.event_type == 'photo'%} Group/Individual Photo Event
   	{%elif event.event_type == 'group'%} Group Formation
   	{%elif event.event_type == 'instructions'%} Gather for instructions
+    {%elif event.event_type == 'project'%} Project Display
   	{%else%} Call the Event Organiser
   	{%endif%}
   	"></div>
