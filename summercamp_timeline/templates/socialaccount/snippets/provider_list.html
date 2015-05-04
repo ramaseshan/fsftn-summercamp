@@ -14,10 +14,6 @@
 <li>
   <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}} waves-effect waves-light btn" 
      href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">{{provider.id}}</a>
-
-     <a title="{{provider.name}}" class=" socialaccount_provider {{provider.id}} btn-floating btn-large waves-effect waves-light deep-orange lighten-1" href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">
-     	<i class="{% if provider.name == 'FACEBOOK' %} fa fa-facebook{% endif %}"></i>
-     </a>
 </li>
 {% endfor %}
 
