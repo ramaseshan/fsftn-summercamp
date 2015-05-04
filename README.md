@@ -44,10 +44,20 @@ Materialize (materializecss.com)
 
 	open 127.0.0.1:8000
 
-7. Activate Social Account login
+7. Create a SuperUser
+
+	Run the command ./manage.py createsuperuser
+	
+	Run the server and go to admin login /admin/
+
+	Choose the users app, and edit the superuser account you just created, and add a First Name called "Needs a Speaker"
+
+	Note : This user should not be used for anyother purpose other than managing. Do not propose for events with this user account. JUST FOR ADMINISTRATIVE PURPOSE
+
+8. Activate Social Account login
      	Refer this and setup, facebook login : http://www.sarahhagstrom.com/2013/09/the-missing-django-allauth-tutorial/
 
 
 Colur Choices :
-Primary colour : deep-orange lighten-1
+Primary colour : deep-orange lighten-2
 Secondary Color : Default Materialize Green

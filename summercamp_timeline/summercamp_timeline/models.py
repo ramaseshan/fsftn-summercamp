@@ -37,8 +37,8 @@ class SpeakerDetails(models.Model):
 	is_fb_visible = models.BooleanField(default=False,null=False,verbose_name="Make Facebook profile publically visible")
 	is_twitter_visible = models.BooleanField(default=False,null=False,verbose_name="Make twitter handle publically visible")
 	is_diasp_visible = models.BooleanField(default=False,null=False,verbose_name="Make Diaspora profile publically visible")
-	user_desc = models.TextField(verbose_name="Enter Some Description about yourself.",blank=True,null=True)
-	user_qual = models.CharField(max_length=500,blank=True,null=True,verbose_name="Your job qualification")
+	user_desc = models.TextField(verbose_name="Boast about yourself..",blank=True,null=True)
+	user_qual = models.CharField(max_length=500,blank=True,null=True,verbose_name="How do you want to qualify yourself, Software Engineer,FSFTN Volunteer etc.")
 
 	def __unicode__(self):
 		return self.user.first_name

@@ -19,7 +19,7 @@
 		        	{% for proposal in proposals %}
 		          <tr id="row_{{proposal.id}}">
 		            <td>{{proposal.event_id.event_name}}</td>
-		            <td>{{proposal.user_id.username}} {{proposal.user_id.last_name}}</td>
+		            <td>{{proposal.user_id.first_name}} {{proposal.user_id.last_name}}</td>
 		            <td class="approve" id="{{proposal.id}}"><a class="waves-effect waves-light btn"><i class="mdi-file-cloud right"></i>Approve</a></td>
 		            <td><a class="waves-effect waves-light btn red"><i class="mdi-file-cloud right"></i>Hold</a></td>
 		          </tr>

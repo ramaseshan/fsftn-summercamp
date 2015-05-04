@@ -117,7 +117,9 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 ### Allauth settings
 SITE_ID = 1
-
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_SIGNUP_FORM_CLASS = 'summercamp_timeline.forms.SignupForm'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
 
 # Manually doing it here because django-allauth has still not started to support the new styled template processors.
